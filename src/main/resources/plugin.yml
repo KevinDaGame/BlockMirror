@@ -1,0 +1,4 @@
+name: BlockMirror
+version: '${version}'
+main: com.github.kevindagame.blockmirror.BlockMirror
+api-version: 1.20
