@@ -8,6 +8,8 @@ class BlockMirrorListener(val blockMirror: BlockMirror) : Listener {
 
     @EventHandler
     fun onBlockPlace(blockPlaceEvent: BlockPlaceEvent) {
-        blockMirror.mirrorBox.handleBlockPlace(blockPlaceEvent.block.blockData, blockPlaceEvent.block.location)
+        blockMirror.mirrorManager.getOrPut(blockPlaceEvent.player).forEach {
+            it.value.handleBlockPlace(blockPlaceEvent.block.blockData, blockPlaceEvent.block.location)
+        }
     }
 }
